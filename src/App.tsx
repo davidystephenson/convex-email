@@ -63,7 +63,7 @@ function SignInForm() {
           e.preventDefault();
           const formData = new FormData(e.target as HTMLFormElement);
           formData.set("flow", flow);
-          void signIn("password", formData).catch((error) => {
+          void signIn("custom", formData).catch((error) => {
             setError(error.message);
           });
         }}
@@ -73,12 +73,6 @@ function SignInForm() {
           type="email"
           name="email"
           placeholder="Email"
-        />
-        <input
-          className="bg-light dark:bg-dark text-dark dark:text-light rounded-md p-2 border-2 border-slate-200 dark:border-slate-800"
-          type="password"
-          name="password"
-          placeholder="Password"
         />
         <button
           className="bg-dark dark:bg-light text-light dark:text-dark rounded-md"
